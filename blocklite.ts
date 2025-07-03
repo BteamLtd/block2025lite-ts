@@ -32,7 +32,7 @@ namespace 基岩科技第五层第一房间 {
     }
 
 
-    //% block="提交 苹果 的数量为 %value"
+    //% block="`logo.mini` 提交 苹果 的数量为 %value"
     //% group="世界控制"
     //% weight=96
     export function subAnsOnF5R1_apple(value: number): void {
