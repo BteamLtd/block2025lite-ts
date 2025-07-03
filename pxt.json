@@ -1,0 +1,21 @@
+{
+    "name": "block2025lite-ts",
+    "version": "0.0.1",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "builder": "*"
+    },
+    "files": [
+        "blocklite.ts"
+    ],
+    "testFiles": [],
+    "targetVersions": {
+        "target": "1.7.7",
+        "targetId": "minecraft"
+    },
+    "supportedTargets": [
+        "minecraft"
+    ],
+    "preferredEditor": "tsprj"
+}
