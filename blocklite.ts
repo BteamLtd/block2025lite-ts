@@ -19,29 +19,6 @@ namespace 基岩科技第五层第一房间 {
     export function startGameP1(): void {
     }
  
-     
-    /**
-     * Start Game Player 2
-     */
-    //% block="`Generics.blastOff` go for 2"
-    export function startGameP2(value: number): void {
-        scoreboard_init()
-        // 在聊天栏显示
-        player.say(`提交的信息: 香蕉 = ${value}`)
-
-        // 先尝试创建一个叫f5r1_ans的计分板
-        player.execute(`scoreboard objectives add f5r1_ans dummy "答案提交板"`)
-
-        // 然后将vName作为虚拟玩家的名字，设置分数value
-        player.execute(`scoreboard players set "香蕉" f5r1_ans ${value}`)
-
-        // 结束时将这个计分板的__status__名字的虚拟玩家分数设为0作为标志位
-        player.execute(`scoreboard players set __status__ f5r1_ans 0`)
-
-        // 添加视觉效果
-        mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
-    }
- 
     
     /**
      * Start Game Player 2
@@ -67,6 +44,7 @@ namespace 基岩科技第五层第一房间 {
         mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
     }
  
+
     //% block="提交 苹果 的数量为 %value"
     //% group="世界控制"
     //% weight=96
@@ -88,15 +66,25 @@ namespace 基岩科技第五层第一房间 {
         mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
     }
 
-    //% block="下方是空气"
+
+    //% block="下方是空气方块"
     //% group="世界控制"
     //% weight=96
-    export function isAir_DOWN(): boolean {
+    export function isAirDOWN(): boolean {
         return agent.inspect(AgentInspection.Block, DOWN) == AIR
     }
 
-    // ============== 新增的循环拼图 ==============
     
+    //% block="如果条件 %condition 为真，则执行"
+    //% group="循环控制"
+    //% weight=94
+    //% handlerStatement=1
+    export function newIf(condition: () => boolean, handler: () => void): void {
+        if (condition()) {
+            handler()
+        }
+    }
+
     //% block="重复 %times 次 || 每次间隔 %delay 毫秒"
     //% times.min=1 times.max=100 times.defl=5
     //% delay.min=0 delay.max=5000 delay.defl=1000
