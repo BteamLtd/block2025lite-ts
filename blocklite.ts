@@ -184,26 +184,6 @@ namespace 基岩科技第五层第一房间 {
         }
     }
 
-    //% block="如果 时间是 %timeType"
-    //% group="判断控制"
-    //% weight=87
-    export function ifTimeIs(timeType: string): boolean {
-        let currentTime = world.timeOfDay()
-        
-        switch (timeType) {
-            case "白天":
-                return currentTime > 0 && currentTime < 12000
-            case "夜晚":
-                return currentTime >= 12000 && currentTime < 24000
-            case "黎明":
-                return currentTime >= 23000 || currentTime < 1000
-            case "黄昏":
-                return currentTime >= 11000 && currentTime < 13000
-            default:
-                return false
-        }
-    }
-
     // ============== 组合判断拼图 ==============
 
     //% block="如果 %condition1 并且 %condition2"
