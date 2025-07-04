@@ -105,7 +105,7 @@ namespace 基岩科技第五层第一房间 {
      */
     //% block="将 %amount 增加到变量 $variable"
     //% amount.defl=1
-    //% variable.defl="黑色方块的计数"
+    //% variable.defl="空缺方块的计数"
     //% variable.shadow="variables_get"
     //% group="变量操作"
     //% weight=95
@@ -113,14 +113,6 @@ namespace 基岩科技第五层第一房间 {
         // 这个函数会直接修改传入的变量引用
         // 在 MakeCode 中，这个功能实际上是通过编译器处理的
         // 用户界面会显示为变量引用的形式
-
-        
-        // 添加粒子效果
-        if (amount > 0) {
-            mobs.spawnParticle(VILLAGER_HAPPY, player.position())
-        } else if (amount < 0) {
-            mobs.spawnParticle(VILLAGER_ANGRY, player.position())
-        }
     }
     
 
