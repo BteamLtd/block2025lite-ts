@@ -11,6 +11,15 @@ namespace 基岩科技第五层第一房间 {
 
     // ============== 原有的功能 ==============
     
+    
+    /**
+     * Start Game Player 11
+     */
+    //% block="`Generics.blastOff` go for launch"
+    export function startGameP1(): void {
+    }
+
+    
     /**
      * Start Game Player 1
      */
@@ -60,25 +69,8 @@ namespace 基岩科技第五层第一房间 {
     }
 
     
-    /**
-     * Start Game Player 11
-     */
-    //% block="`Generics.blastOff` go for launch"
-    export function startGameP1(): void {
-    }
-
-
-    /**
-     * Start Game Player 12
-     */
-    //% block="go for mini"
-    export function startGameP12(): void {
-    }
-
-
-    /**
-     * Start Game Player 3
-     */
+ 
+ 
     //% block="`logo.mini` 下方是空气"
     //% group="世界控制"
     //% weight=96
