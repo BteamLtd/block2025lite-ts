@@ -25,7 +25,7 @@ namespace 基岩科技第五层第一房间 {
      */
     //% block="`Generics.mini` 提交 香蕉 的数量为 %value"
     //% group="世界控制"
-    //% weight=96
+    //% weight=106
     export function subAnsOnF5R1_banana(value: number): void {
         scoreboard_init()
         // 在聊天栏显示
