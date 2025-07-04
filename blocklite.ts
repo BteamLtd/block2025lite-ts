@@ -59,6 +59,16 @@ namespace 基岩科技第五层第一房间 {
         return agent.inspect(AgentInspection.Block, DOWN) == AIR
     }
 
+    /**
+     * Start Game Player 2
+     */
+    //% block="`Generics.blastOff` 222"
+    //% group="世界控制"
+    //% weight=96
+    export function startGamePlayer2(): void {
+        player.say("开始游戏2")
+    }
+
     // ============== 新增的循环拼图 ==============
     
     //% block="重复 %times 次 || 每次间隔 %delay 毫秒"
