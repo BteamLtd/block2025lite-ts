@@ -15,7 +15,7 @@ namespace 基岩科技第五层第一房间 {
     /**
      * Start Game Player 1
      */
-    //% block="`Generics.blastOff` go for launch"
+    //% block="`Generics.mini` go for launch"
     export function startGameP1(): void {
     }
  
