@@ -8,7 +8,8 @@
     },
     "files": [
         "blocklite.ts",
-        "logo.jres"
+        "logo.jres",
+        "generics.jres"
     ],
     "testFiles": [],
     "targetVersions": {
