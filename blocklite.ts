@@ -31,7 +31,10 @@ namespace 基岩科技第五层第一房间 {
         mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
     }
 
-    //% block="`Generics.blastOff` 提交 苹果 的数量为 %value"
+    /**
+     * 
+     */
+    //% block="`logo.mini` 提交 苹果 的数量为 %value"
     //% group="世界控制"
     //% weight=96
     export function subAnsOnF5R1_apple(value: number): void {
@@ -52,18 +55,14 @@ namespace 基岩科技第五层第一房间 {
         mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
     }
 
-    //% block="`Generics.blastOff` 下方是空气"
+    /**
+     * 
+     */
+    //% block="`logo.mini` 下方是空气"
     //% group="世界控制"
     //% weight=96
     export function isAir_DOWN(): boolean {
         return agent.inspect(AgentInspection.Block, DOWN) == AIR
-    }
-
-    //% block="`Generics.blastOff` 222"
-    //% group="世界控制"
-    //% weight=96
-    export function startGamePlayer2(): void {
-        player.say("开始游戏2")
     }
 
     // ============== 新增的循环拼图 ==============
