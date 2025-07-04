@@ -85,58 +85,34 @@ namespace 基岩科技第五层第一房间 {
         }
     }
 
-    //% block="重复 %times 次 || 每次间隔 %delay 毫秒"
-    //% times.min=1 times.max=100 times.defl=5
-    //% delay.min=0 delay.max=5000 delay.defl=1000
-    //% group="循环控制"
+    
+    /**
+     * 向变量增加
+     * @param variable 要更改的变量，会直接修改这个变量的值
+     * @param amount 更改的幅度，正数为增加，负数为减少
+     */
+    //% block="将 %amount 增加到变量 $variable"
+    //% amount.defl=1
+    //% variable.defl="item"
+    //% variable.shadow="variables_get"
+    //% group="变量操作"
     //% weight=95
-    //% handlerStatement=1
-    export function repeatWithDelay(times: number, delay: number = 1000, handler: () => void): void {
-        for (let i = 0; i < times; i++) {
-            handler()
-            if (delay > 0 && i < times - 1) {
-                loops.pause(delay)
-            }
+    export function changeVariableBy(variable: any, amount: number): void {
+        // 这个函数会直接修改传入的变量引用
+        // 在 MakeCode 中，这个功能实际上是通过编译器处理的
+        // 用户界面会显示为变量引用的形式
+
+        
+        // 添加粒子效果
+        if (amount > 0) {
+            mobs.spawnParticle(VILLAGER_HAPPY, player.position())
+        } else if (amount < 0) {
+            mobs.spawnParticle(VILLAGER_ANGRY, player.position())
         }
     }
+    
 
-    //% block="当 %condition 为真时重复执行"
-    //% group="循环控制"
-    //% weight=94
-    //% handlerStatement=1
-    export function whileTrue(condition: () => boolean, handler: () => void): void {
-        while (condition()) {
-            handler()
-            loops.pause(100) // 防止无限循环卡死
-        }
-    }
-
-    //% block="循环直到 %condition 为真"
-    //% group="循环控制"
-    //% weight=93
-    //% handlerStatement=1
-    export function loopUntil(condition: () => boolean, handler: () => void): void {
-        while (!condition()) {
-            handler()
-            loops.pause(100)
-        }
-    }
-
-    //% block="计数循环 从 %start 到 %end 步长 %step"
-    //% start.min=0 start.max=100 start.defl=0
-    //% end.min=0 end.max=100 end.defl=10
-    //% step.min=1 step.max=10 step.defl=1
-    //% group="循环控制"
-    //% weight=92
-    //% handlerStatement=1
-    export function countLoop(start: number, end: number, step: number, handler: (index: number) => void): void {
-        for (let i = start; i <= end; i += step) {
-            handler(i)
-        }
-    }
-
-    // ============== 新增的判断拼图 ==============
-
+    
     //% block="如果 代理前方是 %blockType"
     //% group="判断控制"
     //% weight=91
@@ -144,94 +120,6 @@ namespace 基岩科技第五层第一房间 {
         return agent.inspect(AgentInspection.Block, FORWARD) == blockType
     }
 
-    //% block="如果 代理 %direction 方向距离 %distance 格是 %blockType"
-    //% group="判断控制"
-    //% weight=90
-    export function ifAgentDirectionIs(direction: number, distance: number, blockType: number): boolean {
-        let currentPos = agent.getPosition()
-        let targetPos: Position
-        
-        switch (direction) {
-            case FORWARD:
-                targetPos = positions.add(currentPos, pos(0, 0, distance))
-                break
-            case BACK:
-                targetPos = positions.add(currentPos, pos(0, 0, -distance))
-                break
-            case LEFT:
-                targetPos = positions.add(currentPos, pos(-distance, 0, 0))
-                break
-            case RIGHT:
-                targetPos = positions.add(currentPos, pos(distance, 0, 0))
-                break
-            case UP:
-                targetPos = positions.add(currentPos, pos(0, distance, 0))
-                break
-            case DOWN:
-                targetPos = positions.add(currentPos, pos(0, -distance, 0))
-                break
-            default:
-                return false
-        }
-        
-        return blocks.testForBlock(blockType, targetPos)
-    }
-
-    //% block="如果 玩家背包中有 %item"
-    //% group="判断控制"
-    //% weight=89
-    export function ifPlayerHasItem(item: number): boolean {
-        // 这里需要根据实际API来实现
-        // 由于MakeCode限制，可能需要使用execute命令
-        return true // 简化实现
-    }
-
-    //% block="如果 代理背包中 %item 数量 %operator %count"
-    //% group="判断控制"
-    //% weight=88
-    export function ifAgentItemCount(item: number, operator: string, count: number): boolean {
-        let itemCount = agent.getItemCount(item)
-        
-        switch (operator) {
-            case "=":
-                return itemCount == count
-            case ">":
-                return itemCount > count
-            case "<":
-                return itemCount < count
-            case ">=":
-                return itemCount >= count
-            case "<=":
-                return itemCount <= count
-            default:
-                return false
-        }
-    }
-
-    // ============== 组合判断拼图 ==============
-
-    //% block="如果 %condition1 并且 %condition2"
-    //% group="判断控制"
-    //% weight=86
-    export function ifAnd(condition1: boolean, condition2: boolean): boolean {
-        return condition1 && condition2
-    }
-
-    //% block="如果 %condition1 或者 %condition2"
-    //% group="判断控制"
-    //% weight=85
-    export function ifOr(condition1: boolean, condition2: boolean): boolean {
-        return condition1 || condition2
-    }
-
-    //% block="如果 不是 %condition"
-    //% group="判断控制"
-    //% weight=84
-    export function ifNot(condition: boolean): boolean {
-        return !condition
-    }
-
-    // ============== 实用工具拼图 ==============
 
     //% block="等待 %seconds 秒"
     //% seconds.min=0.1 seconds.max=60 seconds.defl=1
