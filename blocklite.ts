@@ -59,6 +59,14 @@ namespace 基岩科技第五层第一房间 {
         mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
     }
 
+    
+    /**
+     * Start Game Player 11
+     */
+    //% block="`Generics.blastOff` go for launch"
+    export function startGameP1(): void {
+    }
+
     /**
      * Start Game Player 3
      */
