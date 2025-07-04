@@ -45,6 +45,18 @@ namespace 基岩科技第五层第一房间 {
     }
  
 
+    //% block="提交 黑色方块 的最终计数为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R1_black_wool(value: number): void {
+        scoreboard_init()
+        // 在聊天栏显示
+        player.say(`最终计数: 黑色方块 = ${value}`)
+
+        player.execute(`scoreboard players set black_wool f5r1_ans ${value}`)
+    }
+
+
     //% block="提交 苹果 的数量为 %value"
     //% group="世界控制"
     //% weight=96
@@ -93,7 +105,7 @@ namespace 基岩科技第五层第一房间 {
      */
     //% block="将 %amount 增加到变量 $variable"
     //% amount.defl=1
-    //% variable.defl="item"
+    //% variable.defl="黑色方块的计数"
     //% variable.shadow="variables_get"
     //% group="变量操作"
     //% weight=95
@@ -129,15 +141,6 @@ namespace 基岩科技第五层第一房间 {
         loops.pause(seconds * 1000)
     }
 
-    //% block="显示消息 %message 持续 %duration 秒"
-    //% duration.min=1 duration.max=10 duration.defl=3
-    //% group="工具"
-    //% weight=82
-    export function showMessage(message: string, duration: number): void {
-        player.say(message)
-        // 可以添加更多的显示效果
-        mobs.spawnParticle(VILLAGER_HAPPY, player.position())
-    }
 
     //% block="在聊天栏显示调试信息: %info"
     //% group="工具"
