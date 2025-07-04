@@ -23,7 +23,7 @@ namespace 基岩科技第五层第一房间 {
     /**
      * Start Game Player 2
      */
-    //% block="`Generics.blastOff` g"
+    //% block="`Generics.blastOff` go for 2"
     export function startGameP2(value: number): void {
         scoreboard_init()
         // 在聊天栏显示
