@@ -76,7 +76,7 @@ namespace 基岩科技第五层第一房间 {
 
     
     //% block="如果条件 %condition 为真，则执行"
-    //% group="循环控制"
+    //% group="判断控制"
     //% weight=94
     //% handlerStatement=1
     export function newIf(condition: () => boolean, handler: () => void): void {
