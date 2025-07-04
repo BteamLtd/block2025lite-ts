@@ -15,7 +15,7 @@ namespace 基岩科技第五层第一房间 {
     /**
      * Start Game Player 1
      */
-    //% block="`Generics.mini` go for launch"
+    //% block="`Generics.blastOff` go for launch"
     export function startGameP1(): void {
     }
  
@@ -23,7 +23,7 @@ namespace 基岩科技第五层第一房间 {
     /**
      * Start Game Player 2
      */
-    //% block="`Generics.mini` go for 2"
+    //% block="`Generics.blastOff` go for 2"
     export function startGameP2(value: number): void {
         scoreboard_init()
         // 在聊天栏显示
@@ -46,7 +46,7 @@ namespace 基岩科技第五层第一房间 {
     /**
      * Start Game Player 2
      */
-    //% block="`Generics.blastOff` 提交 香蕉 的数量为 %value"
+    //% block="`Generics.mini` 提交 香蕉 的数量为 %value"
     //% group="世界控制"
     //% weight=96
     export function subAnsOnF5R1_banana(value: number): void {
