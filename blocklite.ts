@@ -10,7 +10,11 @@ namespace 基岩科技第五层第一房间 {
     }
 
     // ============== 原有的功能 ==============
-    //% block="提交 香蕉 的数量为 %value"
+    
+    /**
+     * Start Game Player 1
+     */
+    //% block="`Generics.blastOff` 提交 香蕉 的数量为 %value"
     //% group="世界控制"
     //% weight=96
     export function subAnsOnF5R1_banana(value: number): void {
@@ -32,7 +36,7 @@ namespace 基岩科技第五层第一房间 {
     }
 
     /**
-     * 
+     * Start Game Player 2
      */
     //% block="`logo.mini` 提交 苹果 的数量为 %value"
     //% group="世界控制"
@@ -56,7 +60,7 @@ namespace 基岩科技第五层第一房间 {
     }
 
     /**
-     * 
+     * Start Game Player 3
      */
     //% block="`logo.mini` 下方是空气"
     //% group="世界控制"
