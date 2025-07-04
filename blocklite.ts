@@ -1,7 +1,7 @@
 /**
  * 基岩科技测试
  */
-//% weight=90 color=#2196F3 icon="\uf544"
+//% block="logo.mini" weight=90 color=#2196F3 icon="\uf544"
 namespace 基岩科技第五层第一房间 {
 
     function scoreboard_init() {
@@ -79,8 +79,8 @@ namespace 基岩科技第五层第一房间 {
     //% group="判断控制"
     //% weight=94
     //% handlerStatement=1
-    export function newIf(condition: () => boolean, handler: () => void): void {
-        if (condition()) {
+    export function newIf(condition: () => boolean | boolean, handler: () => void): void {
+        if (typeof condition === 'boolean' ? condition : condition()) {
             handler()
         }
     }
