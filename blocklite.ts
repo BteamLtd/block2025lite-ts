@@ -31,7 +31,7 @@ namespace 基岩科技第五层第一房间 {
         mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
     }
 
-    //% block="`logo.mini` 提交 苹果 的数量为 %value"
+    //% block="`Logo.mini` 提交 苹果 的数量为 %value"
     //% group="世界控制"
     //% weight=96
     export function subAnsOnF5R1_apple(value: number): void {
@@ -52,7 +52,7 @@ namespace 基岩科技第五层第一房间 {
         mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
     }
 
-    //% block="`logo.blastOff` 下方是空气"
+    //% block="`Logo.blastOff` 下方是空气"
     //% group="世界控制"
     //% weight=96
     export function isAir_DOWN(): boolean {

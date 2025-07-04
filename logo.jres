@@ -1,6 +1,6 @@
 {
     "*": {
-        "namespace": "logo",
+        "namespace": "Logo",
         "dataEncoding": "base64"
     },
     "blastOff": {
