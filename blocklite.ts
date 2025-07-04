@@ -19,7 +19,10 @@ namespace 基岩科技第五层第一房间 {
     export function startGameP1(): void {
     }
  
-    //% block="提交 香蕉 的数量为 %value"
+    /**
+     * Start Game Player 2
+     */
+    //% block="`Generics.blastOff` 提交 香蕉 的数量为 %value"
     //% group="世界控制"
     //% weight=96
     export function subAnsOnF5R1_banana(value: number): void {
