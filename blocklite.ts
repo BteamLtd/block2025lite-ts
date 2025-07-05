@@ -51,19 +51,20 @@ namespace bteam {
  */
 //% block="基岩科技数学基本拼图" weight=90 color=#2196F3  icon=""
 namespace bteam_math {
+
     /**
      * 相加
      * @param a 要相加的变量
      * @param b 要相加的变量
-     * 可以处理多个数字
+     * 可以处理两个数字
      */
     //% block="将 %a 和 %b 相加"
     //% a.defl=1
     //% b.defl=1
     //% group="数学"
     //% weight=95
-    export function add(...args: number[]): number {
-        return args.reduce((a, b) => a + b, 0)
+    export function add(a: number, b: number): number {
+        return a + b
     }
 
     /**
@@ -85,16 +86,17 @@ namespace bteam_math {
      * 相乘
      * @param a 要相乘的变量
      * @param b 要相乘的变量
-     * 可以处理多个数字
+     * 可以处理两个数字
      */
     //% block="将 %a 和 %b 相乘"
     //% a.defl=1
     //% b.defl=1
     //% group="数学"
     //% weight=95
-    export function mul(...args: number[]): number {
-        return args.reduce((a, b) => a * b, 1)
+    export function mul(a: number, b: number): number {
+        return a * b
     }
+    
 
     /**
      * 相除
@@ -113,6 +115,54 @@ namespace bteam_math {
             return 0
         }
         return a / b
+    }
+
+    
+    /**
+     * 相加
+     * @param a 要相加的变量
+     * @param b 要相加的变量
+     * 可以处理多个数字
+     */
+    //% block="将 %args 内的数字相加"
+    //% args.defl=1
+    //% group="数学"
+    //% weight=95
+    export function add_many(...args: number[]): number {
+        return args.reduce((a, b) => a + b, 0)
+    }
+
+    
+    /**
+     * 相乘
+     * @param a 要相乘的变量
+     * @param b 要相乘的变量
+     * 可以处理多个数字
+     */
+    //% block="将 %args 内的数字相乘"
+    //% args.defl=1
+    //% group="数学"
+    //% weight=95
+    export function mul_many(...args: number[]): number {
+        return args.reduce((a, b) => a * b, 1)
+    }
+
+
+}
+
+
+
+/**
+ * 基岩科技测试
+ */
+//% block="基岩科技-第五层第五房间" weight=90 color=#2196F3  icon=""
+namespace 基岩科技第五层第五房间 {
+    //% block="提交 计算结果为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R5(value: number): void {
+        player.say(`提交的数字: ${value}`)
+        player.execute(`scoreboard players set acc f5r5_ans ${value}`)
     }
 }
 
