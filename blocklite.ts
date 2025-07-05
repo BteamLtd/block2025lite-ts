@@ -1,4 +1,87 @@
 /**
+ * 基岩科技基本拼图
+ */
+//% block="基岩科技基本拼图" weight=90 color=#2196F3  icon=""
+namespace bteam {
+    /**
+     * 向变量增加
+     * @param variable 要更改的变量，会直接修改这个变量的值
+     * @param amount 更改的幅度，正数为增加，负数为减少
+     */
+    //% block="将 %amount 增加到变量 $variable"
+    //% amount.defl=1
+    //% variable.defl="空缺方块的计数"
+    //% variable.shadow="variables_get"
+    //% group="变量操作"
+    //% weight=95
+    export function changeVariableBy(variable: any, amount: number): void {
+        // 这个函数会直接修改传入的变量引用
+        // 在 MakeCode 中，这个功能实际上是通过编译器处理的
+        // 用户界面会显示为变量引用的形式
+    }
+
+
+    //% block="等待 %seconds 秒"
+    //% seconds.min=0.1 seconds.max=60 seconds.defl=1
+    //% group="工具"
+    //% weight=83
+    export function waitSeconds(seconds: number): void {
+        loops.pause(seconds * 1000)
+    }
+
+}
+
+
+
+/**
+ * 基岩科技测试
+ */
+//% block="基岩科技-第五层第二房间" weight=90 color=#2196F3  icon=""
+namespace 基岩科技第五层第二房间 {
+    //% block="提交 第一季度射出箭数 的最终计数为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R1_arrow_1(value: number): void {
+        player.say(`最终计数: 第一季度射出箭数 = ${value}`)
+
+        player.execute(`scoreboard players set ArrowCount_1 f5r1_ans ${value}`)
+    }
+
+
+    //% block="提交 第二季度射出箭数 的最终计数为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R1_arrow_2(value: number): void {
+        player.say(`最终计数: 第二季度射出箭数 = ${value}`)
+
+        player.execute(`scoreboard players set ArrowCount_2 f5r1_ans ${value}`)
+    }
+
+
+    //% block="提交 第三季度射出箭数 的最终计数为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R1_arrow_3(value: number): void {
+        player.say(`最终计数: 第三季度射出箭数 = ${value}`)
+
+        player.execute(`scoreboard players set ArrowCount_3 f5r1_ans ${value}`)
+    }
+
+
+    //% block="提交 三个季度射出总箭数 的最终计数为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R1_arrow_sum(value: number): void {
+        player.say(`最终计数: 第三季度射出箭数 = ${value}`)
+
+        player.execute(`scoreboard players set ArrowSum f5r1_ans ${value}`)
+    }
+
+
+}
+
+
+/**
  * 基岩科技测试
  */
 //% block="基岩科技-第五层第一房间" weight=90 color=#2196F3  icon=""
@@ -10,16 +93,16 @@ namespace 基岩科技第五层第一房间 {
     }
 
     // ============== 原有的功能 ==============
-    
-     
+
+
     /**
      * Start Game Player 1
      */
     //% block="`Generics.blastOff` go for launch"
     export function startGameP1(): void {
     }
- 
-    
+
+
     /**
      * Start Game Player 2
      */
@@ -43,7 +126,7 @@ namespace 基岩科技第五层第一房间 {
         // 添加视觉效果
         mobs.spawnParticle(VILLAGER_HAPPY, pos(0, 1, 0))
     }
- 
+
 
     //% block="提交 黑色方块 的最终计数为 %value"
     //% group="世界控制"
@@ -67,7 +150,6 @@ namespace 基岩科技第五层第一房间 {
 
         player.execute(`scoreboard players set air_wool f5r1_ans ${value}`)
     }
-
 
     //% block="提交 苹果 的数量为 %value"
     //% group="世界控制"
@@ -98,7 +180,7 @@ namespace 基岩科技第五层第一房间 {
         return agent.inspect(AgentInspection.Block, DOWN) == AIR
     }
 
-    
+
     //% block="如果条件 %condition 为真，则执行"
     //% group="判断控制"
     //% weight=94
@@ -109,7 +191,7 @@ namespace 基岩科技第五层第一房间 {
         }
     }
 
-    
+
     /**
      * 向变量增加
      * @param variable 要更改的变量，会直接修改这个变量的值
@@ -126,23 +208,14 @@ namespace 基岩科技第五层第一房间 {
         // 在 MakeCode 中，这个功能实际上是通过编译器处理的
         // 用户界面会显示为变量引用的形式
     }
-    
 
-    
+
+
     //% block="如果 代理前方是 %blockType"
     //% group="判断控制"
     //% weight=91
     export function ifAgentFrontIs(blockType: number): boolean {
         return agent.inspect(AgentInspection.Block, FORWARD) == blockType
-    }
-
-
-    //% block="等待 %seconds 秒"
-    //% seconds.min=0.1 seconds.max=60 seconds.defl=1
-    //% group="工具"
-    //% weight=83
-    export function waitSeconds(seconds: number): void {
-        loops.pause(seconds * 1000)
     }
 
 
