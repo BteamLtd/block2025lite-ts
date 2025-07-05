@@ -36,45 +36,87 @@ namespace bteam {
 /**
  * 基岩科技测试
  */
+//% block="基岩科技-第五层第三房间" weight=90 color=#2196F3  icon=""
+namespace 基岩科技第五层第三房间 {
+    //% block="提交 加法 的答案为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R3_add(value: number): void {
+        player.say(`提交的加法题目答案: ${value}`)
+        player.execute(`scoreboard players set add f5r3_ans ${value}`)
+    }
+
+    
+    //% block="提交 减法 的答案为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R3_sub(value: number): void {
+        player.say(`提交的减法题目答案: ${value}`)
+        player.execute(`scoreboard players set sub f5r3_ans ${value}`)
+    }
+
+    
+    //% block="提交 乘法 的答案为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R3_mul(value: number): void {
+        player.say(`提交的乘法题目答案: ${value}`)
+        player.execute(`scoreboard players set mul f5r3_ans ${value}`)
+    }
+
+    
+    //% block="提交 除法 的答案为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R3_div(value: number): void {
+        player.say(`提交的除法题目答案: ${value}`)
+        player.execute(`scoreboard players set div f5r3_ans ${value}`)
+    }
+}
+
+
+/**
+ * 基岩科技测试
+ */
 //% block="基岩科技-第五层第二房间" weight=90 color=#2196F3  icon=""
 namespace 基岩科技第五层第二房间 {
     //% block="提交 第一季度射出箭数 的最终计数为 %value"
     //% group="世界控制"
     //% weight=96
-    export function subAnsOnF5R1_arrow_1(value: number): void {
+    export function subAnsOnF5R2_arrow_1(value: number): void {
         player.say(`最终计数: 第一季度射出箭数 = ${value}`)
 
-        player.execute(`scoreboard players set ArrowCount_1 f5r1_ans ${value}`)
+        player.execute(`scoreboard players set ArrowCount_1 f5r2_ans ${value}`)
     }
 
 
     //% block="提交 第二季度射出箭数 的最终计数为 %value"
     //% group="世界控制"
     //% weight=96
-    export function subAnsOnF5R1_arrow_2(value: number): void {
+    export function subAnsOnF5R2_arrow_2(value: number): void {
         player.say(`最终计数: 第二季度射出箭数 = ${value}`)
 
-        player.execute(`scoreboard players set ArrowCount_2 f5r1_ans ${value}`)
+        player.execute(`scoreboard players set ArrowCount_2 f5r2_ans ${value}`)
     }
 
 
     //% block="提交 第三季度射出箭数 的最终计数为 %value"
     //% group="世界控制"
     //% weight=96
-    export function subAnsOnF5R1_arrow_3(value: number): void {
+    export function subAnsOnF5R2_arrow_3(value: number): void {
         player.say(`最终计数: 第三季度射出箭数 = ${value}`)
 
-        player.execute(`scoreboard players set ArrowCount_3 f5r1_ans ${value}`)
+        player.execute(`scoreboard players set ArrowCount_3 f5r2_ans ${value}`)
     }
 
 
     //% block="提交 三个季度射出总箭数 的最终计数为 %value"
     //% group="世界控制"
     //% weight=96
-    export function subAnsOnF5R1_arrow_sum(value: number): void {
+    export function subAnsOnF5R2_arrow_sum(value: number): void {
         player.say(`最终计数: 第三季度射出箭数 = ${value}`)
 
-        player.execute(`scoreboard players set ArrowSum f5r1_ans ${value}`)
+        player.execute(`scoreboard players set ArrowSum f5r2_ans ${value}`)
     }
 
 
