@@ -20,6 +20,21 @@ namespace bteam {
         // 用户界面会显示为变量引用的形式
     }
 
+    /**
+     * 向变量赋值
+     * @param variable 要更改的变量，会直接修改这个变量的值
+     * @param amount 赋值的值
+     */
+    //% block="将 %amount 赋值给变量 $variable"
+    //% amount.defl=1
+    //% variable.defl="空缺方块的计数"
+    //% variable.shadow="variables_get"
+    //% group="变量操作"
+    //% weight=95
+    export function changeVariableBy_set(variable: any, amount: number): void {
+
+    }
+
 
     //% block="等待 %seconds 秒"
     //% seconds.min=0.1 seconds.max=60 seconds.defl=1
@@ -30,6 +45,77 @@ namespace bteam {
     }
 
 }
+
+/**
+ * 基岩科技数学基本拼图
+ */
+//% block="基岩科技数学基本拼图" weight=90 color=#2196F3  icon=""
+namespace bteam_math {
+    /**
+     * 相加
+     * @param a 要相加的变量
+     * @param b 要相加的变量
+     * 可以处理多个数字
+     */
+    //% block="将 %a 和 %b 相加"
+    //% a.defl=1
+    //% b.defl=1
+    //% group="数学"
+    //% weight=95
+    export function add(...args: number[]): number {
+        return args.reduce((a, b) => a + b, 0)
+    }
+
+    /**
+     * 相减
+     * @param a 要相减的变量
+     * @param b 要相减的变量
+     * 可以处理多个数字
+     */
+    //% block="将 %a 和 %b 相减"
+    //% a.defl=1
+    //% b.defl=1
+    //% group="数学"
+    //% weight=95
+    export function sub(a: number, b: number): number {
+        return a - b
+    }
+
+    /**
+     * 相乘
+     * @param a 要相乘的变量
+     * @param b 要相乘的变量
+     * 可以处理多个数字
+     */
+    //% block="将 %a 和 %b 相乘"
+    //% a.defl=1
+    //% b.defl=1
+    //% group="数学"
+    //% weight=95
+    export function mul(...args: number[]): number {
+        return args.reduce((a, b) => a * b, 1)
+    }
+
+    /**
+     * 相除
+     * @param a 要相除的变量
+     * @param b 要相除的变量
+     * 可以处理多个数字
+     */
+    //% block="将 %a 和 %b 相除"    
+    //% a.defl=1
+    //% b.defl=1
+    //% group="数学"
+    //% weight=95
+    export function div(a: number, b: number): number {
+        if (b == 0) {
+            player.say("除数不能为0")
+            return 0
+        }
+        return a / b
+    }
+}
+
 
 
 
