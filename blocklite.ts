@@ -57,6 +57,18 @@ namespace 基岩科技第五层第一房间 {
     }
 
 
+    //% block="提交 空缺方块 的最终计数为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R1_air_wool(value: number): void {
+        scoreboard_init()
+        // 在聊天栏显示
+        player.say(`最终计数: 空缺方块 = ${value}`)
+
+        player.execute(`scoreboard players set air_wool f5r1_ans ${value}`)
+    }
+
+
     //% block="提交 苹果 的数量为 %value"
     //% group="世界控制"
     //% weight=96
