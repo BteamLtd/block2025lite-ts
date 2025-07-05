@@ -122,6 +122,22 @@ namespace bteam_math {
 /**
  * 基岩科技测试
  */
+//% block="基岩科技-第五层第四房间" weight=90 color=#2196F3  icon=""
+namespace 基岩科技第五层第四房间 {
+    //% block="提交 钻石的价格为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R4(value: number): void {
+        player.say(`提交的钻石价格: ${value}`)
+        player.execute(`scoreboard players set diamond_price f5r4_ans ${value}`)
+    }
+}
+
+
+
+/**
+ * 基岩科技测试
+ */
 //% block="基岩科技-第五层第三房间" weight=90 color=#2196F3  icon=""
 namespace 基岩科技第五层第三房间 {
     //% block="提交 加法 的答案为 %value"
