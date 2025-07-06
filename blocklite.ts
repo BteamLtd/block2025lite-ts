@@ -151,6 +151,20 @@ namespace bteam_math {
 }
 
 
+/**
+ * 基岩科技测试
+ */
+//% block="基岩科技-第五层第六房间" weight=90 color=#2196F3  icon=""
+namespace 基岩科技第五层第六房间 {
+    //% block="提交 计算结果为 %value"
+    //% group="世界控制"
+    //% weight=96
+    export function subAnsOnF5R6(value: number): void {
+        player.say(`加入总和的数字为: ${value}`)
+        player.execute(`scoreboard players set acc f5r6_ans ${value}`)
+    }
+}
+
 
 /**
  * 基岩科技测试
