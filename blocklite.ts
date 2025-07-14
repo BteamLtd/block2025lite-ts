@@ -14,7 +14,7 @@ namespace bteam {
     //% variable.shadow="variables_get"
     //% group="变量操作"
     //% weight=95
-    export function changeVariableBy(variable: any, amount: number): void {
+    export function changeVariableBy(variable: Counter, amount: number): void {
         // 这个函数会直接修改传入的变量引用
         // 在 MakeCode 中，这个功能实际上是通过编译器处理的
         // 用户界面会显示为变量引用的形式
@@ -31,10 +31,45 @@ namespace bteam {
     //% variable.shadow="variables_get"
     //% group="变量操作"
     //% weight=95
-    export function changeVariableBy_set(variable: any, amount: number): void {
+    export function changeVariableBy_set(variable: Counter, amount: number): void {
 
     }
 
+        /**
+     * 更改计数器值
+     * @param counter 计数器
+     * @param amount 更改的幅度，正数为增加，负数为减少
+     */
+    //% block="将计数器 %counter 增加 %amount"
+    //% amount.defl=1
+    //% group="变量操作"
+    //% weight=92
+    export function changeCounterBy(counter: Counter, amount: number): void {
+        counter.value += amount;
+    }
+
+    /**
+     * 获取计数器值
+     * @param counter 计数器
+     */
+    //% block="计数器 %counter 的值"
+    //% group="变量操作"
+    //% weight=91
+    export function getCounterValue(counter: Counter): number {
+        return counter.value;
+    }
+
+    /**
+     * 设置计数器值
+     * @param counter 计数器
+     * @param newValue 新值
+     */
+    //% block="设置计数器 %counter 的值为 %newValue"
+    //% group="变量操作"
+    //% weight=90
+    export function setCounterValue(counter: Counter, newValue: number): void {
+        counter.value = newValue;
+    }
 
     //% block="等待 %seconds 秒"
     //% seconds.min=0.1 seconds.max=60 seconds.defl=1
