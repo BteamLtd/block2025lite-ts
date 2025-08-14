@@ -280,7 +280,7 @@ namespace 基岩科技第五層第三房間 {
  * 基岩科技测试
  */
 //% block="基岩科技-第五層第一房間" weight=90 color=#2196F3  icon=""
-namespace 基岩科技第五層第一房間 {
+namespace 基岩科技第五层第一房间 {
 
     function scoreboard_init() {
         // 先尝试创建一个叫f5r1_ans的计分板
